@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :issues
   resources :students ,param: :sid
   resources :totalbooks

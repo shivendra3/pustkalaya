@@ -24,10 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'searchkick'
 gem "twitter-bootstrap-rails" 
 gem "devise-bootstrap-views"
-gem 'activeadmin'
-gem 'cancan' # or cancancan
-gem 'draper'
-gem 'pundit'
+gem 'rails_admin', '~> 1.1.1'
+#gem 'activeadmin', github: 'shekibobo/active_admin', branch: '2565-fix-nested-through-filters'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
