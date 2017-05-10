@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sid: MyString
+  totalbook_id: 1
+  issue_date: 2017-05-10
+  return_date: 2017-05-10
+
+two:
+  sid: MyString
+  totalbook_id: 1
+  issue_date: 2017-05-10
+  return_date: 2017-05-10

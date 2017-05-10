@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510042751) do
+ActiveRecord::Schema.define(version: 20170510085022) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20170510042751) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "allbooks", force: :cascade do |t|
+    t.boolean  "issue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "isbn"
+  end
+
   create_table "books", id: false, force: :cascade do |t|
     t.string   "isbn"
     t.string   "title"
@@ -41,6 +48,32 @@ ActiveRecord::Schema.define(version: 20170510042751) do
     t.integer  "available"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "issues", force: :cascade do |t|
+    t.string   "sid"
+    t.integer  "totalbook_id"
+    t.date     "issue_date"
+    t.date     "return_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "students", id: false, force: :cascade do |t|
+    t.string   "sid"
+    t.text     "name"
+    t.integer  "year"
+    t.string   "branch"
+    t.date     "dob"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "totalbooks", force: :cascade do |t|
+    t.string   "isbn"
+    t.boolean  "issue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

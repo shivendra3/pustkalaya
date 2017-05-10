@@ -3,6 +3,13 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
+  def search
+      if params[:search].present?
+      @books = Book.search(params[:search])
+     else
+      @movies = Book.all
+     end
+  end
   def index
     @books = Book.all
   end
@@ -64,7 +71,7 @@ class BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id])
+      @book = Book.find(params[:isbn])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

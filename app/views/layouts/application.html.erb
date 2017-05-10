@@ -53,6 +53,12 @@
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
         </div>
+        <%= form_tag search_books_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        </p>
+     <% end %>
       </div>
     </div>
 
