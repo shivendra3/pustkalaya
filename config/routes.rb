@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :issues
   resources :students ,param: :sid
   resources :totalbooks
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
   		get 'search'
   	end
   end
-  devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
 end

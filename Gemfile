@@ -24,6 +24,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'searchkick'
 gem "twitter-bootstrap-rails" 
 gem "devise-bootstrap-views"
+gem 'activeadmin'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
