@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Totalbooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Isbn</th>
+      <th>Issue</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @totalbooks.each do |totalbook| %>
+      <tr>
+        <td><%= totalbook.isbn %></td>
+        <td><%= totalbook.issue %></td>
+        <td><%= link_to 'Show', totalbook %></td>
+        <td><%= link_to 'Edit', edit_totalbook_path(totalbook) %></td>
+        <td><%= link_to 'Destroy', totalbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Totalbook', new_totalbook_path %>
